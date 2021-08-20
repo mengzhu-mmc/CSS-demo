@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>按钮</title>
+    <style>
+        body {
+            display: flex;
+            display: -webkit-flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: #333;
+            text-align: center;
+        }
+        .btn {
+            position: relative;
+            width: 190px;
+            height: 55px;
+            background: linear-gradient(to right,  #00dbde, #fc00ff, #00dbde);
+            border: 5px solid transparent;
+            background-size: 300%;
+            color: #fff;
+            font-size: 18px;
+            line-height: 55px;
+            text-align: center;
+            border-radius: 30px;
+            animation: glow infinite linear 6s;
+            cursor: pointer;
+        }
+
+        .btn::after {
+            position: absolute;
+            content: '';
+            top: -5px;
+            left: -5px;
+            bottom: -5px;
+            right: -5px;
+            border-radius: 30px;
+            background: inherit;
+            background-size: inherit;
+            z-index: -1;
+            transition: all .5s;
+        }
+
+        @keyframes glow {
+            to {
+                background-position: 300%;
+            }
+        }
+
+        .btn:hover::after {
+            filter: blur(20px);
+        }
+    </style>
+</head>
+<body>
+    <div class="btn btn-gradient">
+        Hover Me
+    </div>
+</body>
+</html>

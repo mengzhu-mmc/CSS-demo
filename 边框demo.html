@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body {
+            margin: 0;
+            padding: 0;
+        }
+        /* .wrap {
+            width: 80%;
+            margin: 200px auto;
+            
+        } */
+        .demo1 {
+            margin: 300px auto;
+            position: relative;
+            width: 180px;
+            height: 30px;
+            border: 2px solid orange;
+            cursor: pointer;
+        }
+        
+        .demo1::after,
+        .demo1::before {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            transition: all .5s;
+        }
+        
+        .demo1::before {
+            top: -8px;
+            left: -8px;
+            border-left: 2px solid rgb(11, 169, 241);
+            border-top: 2px solid rgb(8, 224, 231);
+        }
+
+        .demo1::after {
+            bottom: -8px;
+            right: -8px;
+            border-right: 2px solid rgb(8, 224, 231);
+            border-bottom: 2px solid rgb(11, 169, 241);
+        }
+
+        .demo1:hover::before,
+        .demo1:hover::after{
+            border-color: rgb(223, 33, 33);
+            width: calc(100% + 14px);
+            height: calc(100% + 14px);
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="demo1"></div>
+    </div>
+    
+</body>
+</html>
